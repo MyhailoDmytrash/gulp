@@ -1,0 +1,50 @@
+// ============={ Імпорти }=============
+
+@import "./resource/normalize.scss";
+@import "./resource/fonts.scss";
+@import "./resource/mixin.scss";
+
+
+// ============={ Змінні }=============
+
+$default_font: "";
+$default_fonts_size: 16px;
+$default_fonts_color: #000;
+
+$default_bg: #fff;
+$container_width: 1280px;
+$default_padding: 20px;
+
+
+// ============={ Базові класи }=============
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.container{
+    max-width: $container_width + 2 * $default_padding;
+    width: 100%;
+    height: 100%;
+    padding: 0 $default_padding;
+    margin: 0 auto;
+}
+
+body{
+    font-family: $default_font;
+    background-color: $default_bg;
+    color: $default_fonts_color;
+    font-size: $default_fonts_size;
+}
+
+.main{
+    flex: 1 1;
+}
+
+
+// ============={ Класи }=============
+
+

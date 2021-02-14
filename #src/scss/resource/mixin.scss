@@ -1,0 +1,44 @@
+@mixin font($font_name, $file_name, $weight, $style)
+{
+    @font-face
+    {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.woff") format("woff"),
+        url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+
+@mixin width($max-width, $min-width: 0)
+{
+    max-width: $max-width;
+    min-width: $min-width;
+    width: 100%;
+}
+
+@mixin img($width, $height)
+{
+    width: $width;
+    height: $height;
+}
+
+@mixin img-block()
+{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+@mixin bg-img($directory, $bg_color: rgba(255, 255, 255, 0), $repeat: false)
+{
+    @if $repeat
+    {
+        background-image: url($directory) repeat $bg_color;
+    }
+    @else
+    {
+        background-image: $bg_color url($directory) no-repeat / cover;
+    }
+}
